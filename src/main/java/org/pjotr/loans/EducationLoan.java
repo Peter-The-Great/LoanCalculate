@@ -1,10 +1,11 @@
-package org.pjotr.Loans;
+package org.pjotr.loans;
 
-public class HomeLoan extends Loan {
-    private double rate = 10.5;
+public class EducationLoan extends Loan{
+    private double rate;
+
+    @Override
     public void calculateLoanPayment(double loanamount, int years){
-        int n;
-        n = years * 12;
+        int n = years * 12;
         rate = rate / 1200;
         double EMI = ((rate * Math.pow((1 + rate), n)) / ((Math.pow((1 + rate), n)) - 1)) * loanamount;
         System.out.println("your monthly EMI is " + EMI + " for the amount" + loanamount + " you have borrowed");

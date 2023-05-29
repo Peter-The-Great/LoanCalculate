@@ -1,7 +1,8 @@
-package org.pjotr.Loans;
+package org.pjotr.loans;
 
 public class BussinessLoan extends Loan {
     private double rate = 12.5;
+
     public void calculateLoanPayment(double loanamount, int years){
         int n = years * 12;
         rate = rate / 1200;

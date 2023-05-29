@@ -1,9 +1,9 @@
-package org.pjotr.Factory;
+package org.pjotr.factory;
 
-import org.pjotr.Loans.BussinessLoan;
-import org.pjotr.Loans.EducationLoan;
-import org.pjotr.Loans.HomeLoan;
-import org.pjotr.Loans.Loan;
+import org.pjotr.loans.BussinessLoan;
+import org.pjotr.loans.EducationLoan;
+import org.pjotr.loans.HomeLoan;
+import org.pjotr.loans.Loan;
 import org.pjotr.bank.Bank;
 
 public class LoanFactory extends AbstractFactory {

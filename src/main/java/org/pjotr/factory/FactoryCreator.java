@@ -1,4 +1,4 @@
-package org.pjotr.Factory;
+package org.pjotr.factory;
 
 public class FactoryCreator {
     public static AbstractFactory getFactory(String choice) {

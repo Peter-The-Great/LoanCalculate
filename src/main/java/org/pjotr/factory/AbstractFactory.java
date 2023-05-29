@@ -1,6 +1,6 @@
-package org.pjotr.Factory;
+package org.pjotr.factory;
 
-import org.pjotr.Loans.Loan;
+import org.pjotr.loans.Loan;
 import org.pjotr.bank.Bank;
 
 public abstract class AbstractFactory {

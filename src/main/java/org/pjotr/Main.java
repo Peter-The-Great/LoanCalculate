@@ -1,8 +1,8 @@
 package org.pjotr;
 
-import org.pjotr.Factory.AbstractFactory;
-import org.pjotr.Factory.FactoryCreator;
-import org.pjotr.Loans.Loan;
+import org.pjotr.factory.AbstractFactory;
+import org.pjotr.factory.FactoryCreator;
+import org.pjotr.loans.Loan;
 import org.pjotr.bank.Bank;
 
 import java.io.BufferedReader;
@@ -24,10 +24,6 @@ public class Main {
         Bank b= Objects.requireNonNull(bankFactory).getBank(bankName);
 
         System.out.print("\n");
-        System.out.print("Enter the interest rate for "+b.getBankName()+ ": ");
-
-        double rate=Double.parseDouble(br.readLine());
-        System.out.print("\n");
         System.out.print("Enter the loan amount you want to take: ");
 
         double loanAmount=Double.parseDouble(br.readLine());
@@ -40,7 +36,6 @@ public class Main {
 
         AbstractFactory loanFactory = FactoryCreator.getFactory("Loan");
         Loan l= Objects.requireNonNull(loanFactory).getLoan(loanName);
-        l.getInterestRate(rate);
         l.calculateLoanPayment(loanAmount,years);
     }
 }
