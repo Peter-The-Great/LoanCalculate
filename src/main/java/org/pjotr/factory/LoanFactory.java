@@ -8,12 +8,9 @@ import org.pjotr.bank.Bank;
 
 public class LoanFactory extends AbstractFactory {
     public Bank getBank(String bank) {
-        return null;
+        return getBank(bank);
     }
     public Loan getLoan(String loan) {
-        if (loan == null) {
-            return null;
-        }
         if (loan.equalsIgnoreCase("HomeLoan") || loan.equalsIgnoreCase("Home") || loan.equalsIgnoreCase("home")) {
             return new HomeLoan();
         } else if (loan.equalsIgnoreCase("BussinessLoan") || loan.equalsIgnoreCase("Bussiness") || loan.equalsIgnoreCase("bussiness")) {
