@@ -1,5 +1,5 @@
 package org.pjotr.loans;
 
 public abstract class Loan {
-    public abstract void calculateLoanPayment(double loanamount, int years);
+    public abstract double calculateLoanPayment(double loanamount, int years);
 }

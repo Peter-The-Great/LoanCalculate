@@ -1,9 +1,17 @@
 package org.pjotr.bank;
-
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 public abstract class Bank {
+    @Getter
+    @Setter
     private String bankName;
 
-    public String getBankName() {
-        return bankName;
-    }
+    @Getter
+    @Setter
+    private String address;
+
+    @Getter
+    @Setter
+    private String phone;
 }

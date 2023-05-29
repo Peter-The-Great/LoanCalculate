@@ -14,11 +14,11 @@ public class LoanFactory extends AbstractFactory {
         if (loan == null) {
             return null;
         }
-        if (loan.equalsIgnoreCase("HomeLoan")) {
+        if (loan.equalsIgnoreCase("HomeLoan") || loan.equalsIgnoreCase("Home") || loan.equalsIgnoreCase("home")) {
             return new HomeLoan();
-        } else if (loan.equalsIgnoreCase("BussinessLoan")) {
+        } else if (loan.equalsIgnoreCase("BussinessLoan") || loan.equalsIgnoreCase("Bussiness") || loan.equalsIgnoreCase("bussiness")) {
             return new BussinessLoan();
-        } else if (loan.equalsIgnoreCase("EducationLoan")) {
+        } else if (loan.equalsIgnoreCase("EducationLoan") || loan.equalsIgnoreCase("Education") || loan.equalsIgnoreCase("education")) {
             return new EducationLoan();
         }
         return null;
