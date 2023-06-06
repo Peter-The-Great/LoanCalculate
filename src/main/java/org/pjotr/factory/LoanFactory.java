@@ -8,7 +8,6 @@ import org.pjotr.bank.Bank;
 
 public class LoanFactory extends AbstractFactory {
     public Bank getBank(String bank) {
-        //Make it so it gets multible banks
         return null;
     }
     public Loan getLoan(String loan) {
