@@ -8,7 +8,8 @@ import org.pjotr.bank.Bank;
 
 public class LoanFactory extends AbstractFactory {
     public Bank getBank(String bank) {
-        return getBank(bank);
+        //Make it so it gets multible banks
+        return null;
     }
     public Loan getLoan(String loan) {
         if (loan.equalsIgnoreCase("HomeLoan") || loan.equalsIgnoreCase("Home") || loan.equalsIgnoreCase("home")) {
@@ -18,6 +19,8 @@ public class LoanFactory extends AbstractFactory {
         } else if (loan.equalsIgnoreCase("EducationLoan") || loan.equalsIgnoreCase("Education") || loan.equalsIgnoreCase("education")) {
             return new EducationLoan();
         }
-        return null;
+        else {
+            return null;
+        }
     }
 }

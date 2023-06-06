@@ -6,12 +6,10 @@ import org.pjotr.loans.Loan;
 import org.pjotr.bank.Bank;
 
 import java.io.*;
-import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String currency = Currency.getInstance(Locale.getDefault()).getSymbol();
 
         System.out.print("Enter the name of Bank from where you want to take loan amount: ");
         String bankName=br.readLine();
@@ -22,7 +20,7 @@ public class Main {
         String loanName=br.readLine();
         AbstractFactory bankFactory = FactoryCreator.getFactory("Bank");
         assert bankFactory != null;
-        Bank b= bankFactory.getBank(bankName);
+        Bank b = bankFactory.getBank(bankName);
 
         System.out.print("\n");
         System.out.print("Enter the loan amount you want to take: ");
@@ -33,12 +31,11 @@ public class Main {
         int years = Integer.parseInt(br.readLine());
 
         System.out.print("\n");
-        System.out.println("you are taking the loan from "+ b.getBankName());
+        System.out.println("You are taking the loan from "+ b.getBankName());
 
         AbstractFactory loanFactory = FactoryCreator.getFactory("Loan");
         assert loanFactory != null;
-        Loan l=loanFactory.getLoan(loanName);
-
-        System.out.println("your monthly EMI is "+ currency + Math.round(l.calculateLoanPayment(loanAmount,years) * 100.0)/100.0 + " for the amount " + currency + loanAmount + " you have borrowed");
+        Loan l= loanFactory.getLoan(loanName);
+        l.getLoan(loanAmount,years);
     }
 }
