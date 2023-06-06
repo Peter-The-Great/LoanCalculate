@@ -6,4 +6,10 @@ public class Rabobank extends Bank{
         setAddress("Rabobank Address");
         setPhone("Rabobank Phone Number");
     }
+    @Override
+    public void bankDetails() {
+        System.out.println("Bank Name: " + getBankName());
+        System.out.println("Bank Address: " + getAddress());
+        System.out.println("Bank Phone: " + getPhone());
+    }
 }

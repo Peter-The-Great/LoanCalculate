@@ -24,8 +24,14 @@ public abstract class Loan {
      * @param loanamount
      * @param years
      */
-    public abstract double calculateLoanPayment(double loanamount, int years);
-    public void getLoan(double loanAmount, int years) {
-        System.out.println("Your monthly EMI is "+ currency + Math.round(calculateLoanPayment(loanAmount,years) * 100.0)/100.0 + " for the amount " + currency + loanAmount + " you have borrowed!");
+    public abstract void calculateLoanPayment(double loanamount, int years);
+
+    /**
+     * getLoan() method is een functie die de loan ophaalt
+     * @param sum
+     * @param loanAmount
+     */
+    public static void getLoan(double sum, double loanAmount) {
+        System.out.println("Your monthly EMI is "+ currency + Math.round(sum * 100.0)/100.0 + " for the amount " + currency + loanAmount + " you have borrowed!");
     }
 }

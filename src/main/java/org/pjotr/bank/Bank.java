@@ -14,4 +14,6 @@ public abstract class Bank {
     @Getter
     @Setter
     private String phone;
+
+    public abstract void bankDetails();
 }

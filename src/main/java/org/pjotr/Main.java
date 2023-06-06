@@ -32,10 +32,11 @@ public class Main {
 
         System.out.print("\n");
         System.out.println("You are taking the loan from "+ b.getBankName());
+        b.bankDetails();
 
         AbstractFactory loanFactory = FactoryCreator.getFactory("Loan");
         assert loanFactory != null;
-        Loan l= loanFactory.getLoan(loanName);
-        l.getLoan(loanAmount,years);
+        Loan l = loanFactory.getLoan(loanName);
+        l.calculateLoanPayment(loanAmount,years);
     }
 }

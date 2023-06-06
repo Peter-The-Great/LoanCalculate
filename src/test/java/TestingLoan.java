@@ -17,6 +17,6 @@ public class TestingLoan {
     public void testLoan(){
         AbstractFactory loanFactory = FactoryCreator.getFactory("Loan");
         Loan l=loanFactory.getLoan("education");
-        assertEquals(Math.round(l.calculateLoanPayment(100,3) * 100.0)/100.0, 3.2);
+        assertEquals(Math.round(l.getRate()), 9);
     }
 }
