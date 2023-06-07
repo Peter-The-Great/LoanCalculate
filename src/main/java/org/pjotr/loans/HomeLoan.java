@@ -2,6 +2,7 @@ package org.pjotr.loans;
 
 public class HomeLoan extends Loan {
     public HomeLoan() {
+        setName("Home");
         setRate(10.5);
     }
     @Override

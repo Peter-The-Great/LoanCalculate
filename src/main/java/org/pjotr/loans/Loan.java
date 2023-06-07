@@ -9,14 +9,21 @@ import java.util.Locale;
 public abstract class Loan {
     /**
      * This is the rate of interest for the loan that can be set by the bank.
-     * @param rate of interest
+     *
      */
     @Getter
     @Setter
     private double rate;
+
+    /**
+     * This is the name of the loan
+     */
+    @Getter
+    @Setter
+    private String name;
     /**
      * This is the currency symbol for the current locale
-     * @param currency
+     *
      */
     private static final String currency = Currency.getInstance(Locale.getDefault()).getSymbol();
     /**

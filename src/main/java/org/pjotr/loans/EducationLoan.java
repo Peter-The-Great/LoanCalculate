@@ -3,6 +3,7 @@ package org.pjotr.loans;
 public class EducationLoan extends Loan{
 
     public EducationLoan() {
+        setName("Education");
         setRate(9.5);
     }
     @Override

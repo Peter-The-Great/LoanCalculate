@@ -3,6 +3,7 @@ package org.pjotr.loans;
 public class BussinessLoan extends Loan {
 
     public BussinessLoan() {
+        setName("Business");
         setRate(11.0);
     }
     @Override

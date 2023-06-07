@@ -16,6 +16,11 @@ public abstract class AbstractFactory {
      */
     public abstract Loan getLoan(String loan);
 
+    /**
+     * getFactory() method is een functie die de factory ophaalt
+     * @param choice
+     * @return AbstractFactory
+     */
     public static AbstractFactory getFactory(String choice){
         if (choice.equalsIgnoreCase("Bank")) {
             return new BankFactory();

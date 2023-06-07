@@ -12,12 +12,15 @@ public class BankFactory extends AbstractFactory {
             return new ING();
         } else if (bank.equalsIgnoreCase("ABNAMRO") || bank.equalsIgnoreCase("ABN AMRO")) {
             return new ABNAMRO();
-        } else if (bank.equalsIgnoreCase("Rabobank") || bank.equalsIgnoreCase("Rabo Bank")) {
+        } else if (bank.equalsIgnoreCase("RABOBANK") || bank.equalsIgnoreCase("Rabo Bank")) {
             return new Rabobank();
         }
         return null;
     }
+
+    @Override
     public Loan getLoan(String loan) {
         return null;
     }
+
 }
