@@ -1,5 +1,6 @@
 package org.pjotr.loans;
 
+
 public class EducationLoan extends Loan{
 
     public EducationLoan() {
@@ -7,9 +8,15 @@ public class EducationLoan extends Loan{
         setRate(9.5);
     }
     @Override
-    public void calculateLoanPayment(double loanamount, int years){
+    protected double calculateInterest(double loanAmount) {
+        return (getRate() / 100) / 12;
+    }
+
+    @Override
+    protected double calculateEMI(double loanAmount, double rate, int years) {
         int n = years * 12;
-        double rate = getRate() / 1200;
-        getLoan((loanamount * rate) / (1 - Math.pow(1 + rate, -n)) * loanamount, loanamount);
+        double numerator = rate * Math.pow((1 + rate), n);
+        double denominator = Math.pow((1 + rate), n) - 1;
+        return numerator / denominator * loanAmount;
     }
 }

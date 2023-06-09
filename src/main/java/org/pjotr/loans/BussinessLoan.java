@@ -7,9 +7,12 @@ public class BussinessLoan extends Loan {
         setRate(11.0);
     }
     @Override
-    public void calculateLoanPayment(double loanamount, int years){
-        int n = years * 12;
-        double rate = (getRate() / 100) / 12;
-        getLoan((loanamount * rate) / (1 - Math.pow(1 + rate, -n)), loanamount);
+    protected double calculateInterest(double loanAmount) {
+        return (getRate() /100) / 12;
+    }
+
+    @Override
+    protected double calculateEMI(double loanAmount, double rate, int years) {
+        return (loanAmount * rate) / (1 - Math.pow(1 + rate, -(years*12)));
     }
 }

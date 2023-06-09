@@ -11,9 +11,9 @@ public class LoanFactory extends AbstractFactory {
     public Loan getLoan(String loan) {
         if (loan.equalsIgnoreCase("HomeLoan") || loan.equalsIgnoreCase("Home")) {
             return new HomeLoan();
-        } else if (loan.equalsIgnoreCase("BussinessLoan") || loan.equalsIgnoreCase("Bussiness")) {
+        } else if (loan.equalsIgnoreCase("BussinessLoan") || loan.equalsIgnoreCase("Bussiness") || loan.equalsIgnoreCase("bus")) {
             return new BussinessLoan();
-        } else if (loan.equalsIgnoreCase("EducationLoan") || loan.equalsIgnoreCase("Education")) {
+        } else if (loan.equalsIgnoreCase("EducationLoan") || loan.equalsIgnoreCase("Education") || loan.equalsIgnoreCase("edu")) {
             return new EducationLoan();
         }
         else {
