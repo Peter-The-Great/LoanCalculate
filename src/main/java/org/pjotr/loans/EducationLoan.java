@@ -14,11 +14,9 @@ public class EducationLoan extends Loan{
 
     @Override
     protected double calculateEMI(double loanAmount, double rate, int years) {
-        int jaren = years * 12;
-
-        double numerator = loanAmount * rate * Math.pow((1 + rate), jaren);
-        double denominator = Math.pow((1 + rate), jaren) - 1;
-
-        return numerator / denominator;
+        int n = years * 12;
+        double numerator = rate * Math.pow((1 + rate), n);
+        double denominator = Math.pow((1 + rate), n) - 1;
+        return numerator / denominator * loanAmount;
     }
 }

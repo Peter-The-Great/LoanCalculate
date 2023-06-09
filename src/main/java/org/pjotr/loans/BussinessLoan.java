@@ -13,6 +13,6 @@ public class BussinessLoan extends Loan {
 
     @Override
     protected double calculateEMI(double loanAmount, double rate, int years) {
-        return (loanAmount * rate) / (1 - Math.pow(1 + rate, -years));
+        return (loanAmount * rate) / (1 - Math.pow(1 + rate, -(years*12)));
     }
 }

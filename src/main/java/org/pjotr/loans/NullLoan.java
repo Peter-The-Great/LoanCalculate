@@ -12,6 +12,6 @@ public class NullLoan extends Loan{
 
     @Override
     protected double calculateEMI(double loanAmount, double rate, int years) {
-        return (rate * Math.pow((1 + rate), years) / (Math.pow((1 + rate), years) - 1)) * loanAmount;
+        return (rate * Math.pow((1 + rate), years * 12) / (Math.pow((1 + rate), years * 12) - 1)) * loanAmount;
     }
 }

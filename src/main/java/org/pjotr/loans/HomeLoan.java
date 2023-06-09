@@ -13,10 +13,7 @@ public class HomeLoan extends Loan {
 
     @Override
     protected double calculateEMI(double loanAmount, double rate, int years) {
-        System.out.println(rate);
-        System.out.println(loanAmount);
-        System.out.println((rate * Math.pow((1 + rate), years)));
-
-        return (rate * Math.pow((1 + rate), years) / (Math.pow((1 + rate), years) - 1)) * loanAmount;
+        int n = years * 12;
+        return (rate * Math.pow((1 + rate), n) / (Math.pow((1 + rate), n) - 1)) * loanAmount;
     }
 }
