@@ -1,14 +1,12 @@
 package org.pjotr.factory;
 
-import org.pjotr.loans.BussinessLoan;
-import org.pjotr.loans.EducationLoan;
-import org.pjotr.loans.HomeLoan;
-import org.pjotr.loans.Loan;
+import org.pjotr.bank.Nullbank;
+import org.pjotr.loans.*;
 import org.pjotr.bank.Bank;
 
 public class LoanFactory extends AbstractFactory {
     public Bank getBank(String bank) {
-        return null;
+        return new Nullbank();
     }
     public Loan getLoan(String loan) {
         if (loan.equalsIgnoreCase("HomeLoan") || loan.equalsIgnoreCase("Home")) {
@@ -19,7 +17,7 @@ public class LoanFactory extends AbstractFactory {
             return new EducationLoan();
         }
         else {
-            return null;
+            return new NullLoan();
         }
     }
 }

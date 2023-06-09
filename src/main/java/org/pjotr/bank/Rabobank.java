@@ -17,17 +17,10 @@ public class Rabobank extends Bank{
     public void changeLoanRate(Loan loan) {
         //Get Loan name
         switch (loan.getName()) {
-            case "Home":
-                loan.setRate(3.5);
-                break;
-            case "Education":
-                loan.setRate(1.5);
-                break;
-            case "Business":
-                loan.setRate(4.5);
-                break;
-            default:
-                System.out.println("Loan Name not found");
+            case "Home" -> loan.setRate(3.5);
+            case "Education" -> loan.setRate(1.5);
+            case "Business" -> loan.setRate(4.5);
+            default -> System.out.println("Loan Name not found");
         }
     }
 }

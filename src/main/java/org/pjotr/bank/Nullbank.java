@@ -2,8 +2,8 @@ package org.pjotr.bank;
 
 import org.pjotr.loans.Loan;
 
-public class ING extends Bank{
-    public ING() {
+public class Nullbank extends Bank{
+    public Nullbank() {
         setBankName("ING");
         setAddress("ING Address");
         setPhone("ING Phone Number");
@@ -15,7 +15,6 @@ public class ING extends Bank{
         System.out.println("Bank Phone: " + getPhone());
     }
     public void changeLoanRate(Loan loan) {
-        //Get Loan name
         switch (loan.getName()) {
             case "Home" -> loan.setRate(8.5);
             case "Education" -> loan.setRate(9.5);

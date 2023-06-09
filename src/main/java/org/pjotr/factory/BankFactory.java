@@ -1,10 +1,8 @@
 package org.pjotr.factory;
 
+import org.pjotr.bank.*;
 import org.pjotr.loans.Loan;
-import org.pjotr.bank.ABNAMRO;
-import org.pjotr.bank.Bank;
-import org.pjotr.bank.ING;
-import org.pjotr.bank.Rabobank;
+import org.pjotr.loans.NullLoan;
 
 public class BankFactory extends AbstractFactory {
     public Bank getBank(String bank) {
@@ -15,12 +13,12 @@ public class BankFactory extends AbstractFactory {
         } else if (bank.equalsIgnoreCase("RABOBANK") || bank.equalsIgnoreCase("Rabo Bank")) {
             return new Rabobank();
         }
-        return null;
+        return new Nullbank();
     }
 
     @Override
     public Loan getLoan(String loan) {
-        return null;
+        return new NullLoan();
     }
 
 }
