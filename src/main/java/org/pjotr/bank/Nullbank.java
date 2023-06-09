@@ -4,15 +4,9 @@ import org.pjotr.loans.Loan;
 
 public class Nullbank extends Bank{
     public Nullbank() {
-        setBankName("ING");
-        setAddress("ING Address");
-        setPhone("ING Phone Number");
-    }
-    @Override
-    public void bankDetails() {
-        System.out.println("Bank Name: " + getBankName());
-        System.out.println("Bank Address: " + getAddress());
-        System.out.println("Bank Phone: " + getPhone());
+        setBankName("Nullbank");
+        setAddress("Nullbank Address");
+        setPhone("Nullbank Phone Number");
     }
     public void changeLoanRate(Loan loan) {
         switch (loan.getName()) {

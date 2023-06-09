@@ -19,7 +19,11 @@ public abstract class Bank {
     /**
      * bankDetails() method is een functie die de bank details ophaalt
      */
-    public abstract void bankDetails();
+    public final void bankDetails(){
+        System.out.println("Bank Name: " + getBankName());
+        System.out.println("Bank Address: " + getAddress());
+        System.out.println("Bank Phone: " + getPhone());
+    }
 
     /**
      * changeLoanRate() method is een functie die de rente van een loan veranderd
