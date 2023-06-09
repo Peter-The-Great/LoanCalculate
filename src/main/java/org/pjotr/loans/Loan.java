@@ -26,19 +26,48 @@ public abstract class Loan {
      *
      */
     private static final String currency = Currency.getInstance(Locale.getDefault()).getSymbol();
-    /**
-     * calculateLoanPayment() method is een functie die de
-     * @param loanamount
-     * @param years
-     */
-    public abstract void calculateLoanPayment(double loanamount, int years);
 
     /**
-     * getLoan() method is een functie die de loan ophaalt
-     * @param sum
-     * @param loanAmount
+     * Template method for calculating the loan payment.
+     * It calls the abstract method calculateInterest() implemented by subclasses.
+     *
+     * @param loanAmount the loan amount
+     * @param years      the loan duration in years
      */
-    public static void getLoan(double sum, double loanAmount) {
-        System.out.println("Your monthly EMI is "+ currency + Math.round(sum * 100.0)/100.0 + " for the amount " + currency + loanAmount + " you have borrowed!");
+    public final void calculateLoanPayment(double loanAmount, int years) {
+        double interest = calculateInterest(loanAmount);
+        double emi = calculateEMI(loanAmount, interest, years);
+        displayLoanPayment(emi, loanAmount);
+    }
+
+    /**
+     * Abstract method to calculate the interest.
+     * Subclasses must provide their own implementation.
+     *
+     * @param loanAmount the loan amount
+     * @return the calculated interest
+     */
+     protected abstract double calculateInterest(double loanAmount);
+
+    /**
+     * Calculates the Equated Monthly Installment (EMI) based on the loan amount,
+     * interest, and loan duration.
+     *
+     * @param loanAmount the loan amount
+     * @param interest   the loan interest
+     * @param years      the loan duration in years
+     * @return the calculated EMI
+     */
+     protected abstract double calculateEMI(double loanAmount, double interest, int years);
+
+    /**
+     * Displays the loan payment details.
+     *
+     * @param emi        the EMI amount
+     * @param loanAmount the loan amount
+     */
+    private void displayLoanPayment(double emi, double loanAmount) {
+        System.out.println("Your monthly EMI is " + currency + Math.round(emi * 100.0)/100.0 +
+                " for the amount " + currency + loanAmount + " you have borrowed!");
     }
 }
